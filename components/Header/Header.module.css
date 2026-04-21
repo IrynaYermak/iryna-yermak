@@ -1,0 +1,163 @@
+/* components/Header/Header.module.css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  border-bottom: 2px solid var(--text-main);
+  z-index: 1000;
+  padding: 0.75rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Логотип */
+/* .logo {
+  font-family: var(--font-jakarta);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo span {
+  color: var(--primary-color);
+} */
+
+.logo {
+  display: flex;
+  align-items: center;
+  /* Прибираємо старі шрифтові налаштування, якщо вони заважають */
+  text-decoration: none;
+}
+
+.logoImage {
+  object-fit: contain; /* Щоб логотип не деформувався */
+  transition: transform 0.3s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.05); /* Легкий ефект при наведенні */
+}
+
+/* Навігація */
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+}
+
+/* Ефект підкреслення-маркера */
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--accent-yellow);
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Соцмережі */
+.socials {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.socialIcon {
+  color: var(--text-main);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socialIcon:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Мобільне меню */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .logoImage {
+    width: 120px;
+    height: auto;
+  }
+
+  .nav {
+    position: fixed; /* Змінюємо на fixed */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* На весь екран */
+    background-color: var(--bg-color);
+    display: none; /* Сховано за замовчуванням */
+    flex-direction: column;
+    justify-content: center; /* Центруємо вертикально */
+    align-items: center; /* Центруємо горизонтально */
+    gap: 2.5rem;
+    z-index: 999; /* Нижче ніж кнопка закриття */
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navActive {
+    display: flex;
+  }
+
+  .navLink {
+    font-size: 2rem;
+  }
+
+  .burger {
+    display: block;
+    position: relative;
+    z-index: 1001;
+    border: none;
+    background: none;
+  }
+
+  .socials {
+    display: none; /* Ховаємо в хедері на мобілках, можна додати в меню */
+  }
+
+  .socialsMobile {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+}

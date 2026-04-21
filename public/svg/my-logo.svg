@@ -1,0 +1,8 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 10 Q 30 5, 50 15 T 90 10" stroke="#FDFD96" stroke-width="8" fill="none" opacity="0.6"/>
+    <path d="M20 15 L15 15 L15 45 L20 45" stroke="#6A5ACD" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M60 15 L65 15 L65 45 L60 45" stroke="#6A5ACD" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="25" y="40" font-family="Fira_Code, sans-serif" font-weight="bold" font-size="28" fill="#333" style="font-style: italic;">IY</text>
+    <text x="70" y="32" font-family="Verdana" font-size="14" fill="#333" font-weight="bold">IRYNA YERMAK</text>
+    <text x="70" y="48" font-family="Fira_Code" font-size="10" fill="#666">Junior Frontend Developer</text>
+</svg>
