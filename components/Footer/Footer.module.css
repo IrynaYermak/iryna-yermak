@@ -1,0 +1,140 @@
+/* components/Footer/Footer.module.css */
+.footer {
+  flex-shrink: 0;
+  background-color: var(--bg-color);
+  padding: 4rem 0 2rem 0;
+  border-top: 3px solid var(--text-main); /* Товста лінія, як в ескізі */
+  margin-top: 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Лого та статус */
+.brandSide {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.statusBadge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 12px;
+  background-color: var(--accent-yellow);
+  color: var(--text-main);
+  font-family: var(--font-fira);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--text-main);
+  transform: rotate(-2deg); /* Ефект наклейки */
+}
+
+/* Контакти та Навігація */
+.title {
+  font-family: var(--font-jakarta);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-main);
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.socialIcon {
+  color: var(--text-main);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socialIcon:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Нижня панель */
+.bottomBar {
+  border-top: 1px solid var(--text-muted);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Медіа-запити (Responsive) */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* Всі колонки в одну лінію */
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .brandSide,
+  .statusBadge {
+    align-items: center;
+    align-self: center;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.easterEgg {
+  font-family: var(--font-fira), monospace; /* Використовуємо моноширинний шрифт */
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  cursor: default;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0.7;
+}
+
+.easterEgg:hover {
+  opacity: 1;
+  color: var(--primary-color);
+  transform: rotate(-3deg) scale(1.1); /* "Оживає" при наведенні */
+}
+
+.coffeeIcon {
+  transition: transform 0.5s ease;
+}
+
+.easterEgg:hover .coffeeIcon {
+  transform: rotate(15deg) translateY(-2px); /* Чашка "парує" */
+}
+
+.highlightCode {
+  background-color: var(--accent-yellow);
+  padding: 0 4px;
+  border-radius: 2px;
+}

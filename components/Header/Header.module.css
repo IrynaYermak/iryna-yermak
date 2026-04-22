@@ -152,12 +152,36 @@
   }
 
   .socials {
-    display: none; /* Ховаємо в хедері на мобілках, можна додати в меню */
+    display: none;
+  }
+}
+
+/* /----- */
+
+.themeToggle {
+  background: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.themeToggle:hover {
+  background-color: var(--accent-yellow);
+}
+
+/* На мобільних пристроях ховаємо або адаптуємо */
+@media (max-width: 768px) {
+  .actions {
+    gap: 0.8rem;
   }
 
-  .socialsMobile {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
+  .cvButton {
+    display: none; /* Можна приховати в хедері та додати всередину мобільного меню */
   }
 }

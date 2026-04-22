@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter, Fira_Code } from "next/font/google";
 import "modern-normalize/modern-normalize.css";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -39,7 +40,8 @@ export default function RootLayout({
     <html lang="en" className={`${jakarta.variable} ${inter.variable}`}>
       <body className="font-inter">
         <Header />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

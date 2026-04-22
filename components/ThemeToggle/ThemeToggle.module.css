@@ -1,0 +1,48 @@
+/* ThemeToggle.module.css */
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: transparent; /* Прибираємо фон */
+
+  border: none; /* ПРИБИРАЄМО РАМКУ */
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+  outline: none; /* Прибираємо дефолтний контур браузера */
+}
+
+/* Ефект при наведенні: додаємо легкий пастельний фон замість рамки */
+.toggleBtn:hover {
+  background-color: var(
+    --accent-yellow
+  ); /* Або використовуйте прозорий варіант вашого primary */
+  transform: translateY(-1px);
+}
+
+/* Для доступності: показуємо контур лише при навігації клавіатурою */
+.toggleBtn:focus-visible {
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.toggleIcon {
+  font-size: 1.2rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.toggleBtn:hover .toggleIcon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Адаптивність для мобілок */
+@media (max-width: 768px) {
+  .toggleBtn {
+    padding: 8px;
+    border-radius: 50%;
+  }
+}
