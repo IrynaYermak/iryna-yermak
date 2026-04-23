@@ -1,0 +1,88 @@
+/* components/WorkExperience/WorkExperience.module.css */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto; /* Центруємо всю колонку досвіду */
+  position: relative;
+}
+
+.card {
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border: 2px solid var(--text-main);
+  border-radius: 8px;
+  box-shadow: 6px 6px 0px var(--text-main); /* Жорстка тінь */
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px var(--accent-yellow);
+}
+
+/* Спеціальний стиль для Career Break */
+.studyCard {
+  border-style: dashed;
+  background-color: transparent;
+  box-shadow: 6px 6px 0px var(--primary-color);
+}
+
+.period {
+  display: inline-block;
+  font-family: var(--font-fira);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.role {
+  font-family: var(--font-jakarta);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.company {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.descList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.descList li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Кастомний маркер списку (стрілочка) */
+.descList li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-yellow);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .role {
+    font-size: 1.25rem;
+  }
+}

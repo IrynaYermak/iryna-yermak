@@ -1,8 +1,7 @@
 "use client";
 
-import style from "./(site)/page.module.css";
-import Link from "next/link";
-import Image from "next/image";
+import styles from "./page.module.css";
+
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
@@ -15,15 +14,15 @@ export default function NotFoundPage() {
   }, [router]);
 
   return (
-    <main>
-      <div className="section container ">
-        <h2>
-          404 | Oh! This page is still under construction — just like great
-          careers.
-        </h2>
-        <p>
-          No worries — you’ll be redirected to the homepage in a few seconds.
-        </p>
+    <main className={styles.wrapper}>
+      <h1 className={styles.errorCode}>404</h1>
+
+      <h2 className={styles.title}>
+        This page is still under construction. Moving you back home...
+      </h2>
+
+      <div className={styles.timerBar}>
+        <div className={styles.fill}></div>
       </div>
     </main>
   );

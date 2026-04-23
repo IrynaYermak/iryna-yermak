@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./Hero.module.css";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -10,9 +11,9 @@ const Hero = () => {
           Iryna <span>Yermak</span>
         </h1>
         <p className={styles.subtitle}>Junior Frontend Developer</p>
-        <button type={"button"} className={styles.ctaButton}>
-          Дивитися роботи
-        </button>
+        <Link href="/projects" className={styles.ctaButton}>
+          My projects
+        </Link>
       </div>
 
       <div className={styles.imageWrapper}>

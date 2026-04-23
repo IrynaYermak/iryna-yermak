@@ -26,7 +26,6 @@ const Header = () => {
       <div className={styles.container}>
         {/* Логотип */}
         <Link href="/" className={styles.logo}>
-          {/* <span>[</span> IY <span>]</span> */}
           <Image
             src="/svg/my-logo.svg"
             alt="Iryna Yermak Logo"
@@ -40,7 +39,13 @@ const Header = () => {
         {/* Навігація */}
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navActive : ""}`}>
           <Link
-            // href="#about"
+            href="/"
+            className={styles.navLink}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
             href="#about"
             className={styles.navLink}
             onClick={() => setIsMenuOpen(false)}
@@ -55,18 +60,18 @@ const Header = () => {
             Skills
           </Link>
           <Link
-            href="/experience"
+            href="#experience"
             className={styles.navLink}
             onClick={() => setIsMenuOpen(false)}
           >
             Experience
           </Link>
           <Link
-            href="#study"
+            href="/projects"
             className={styles.navLink}
             onClick={() => setIsMenuOpen(false)}
           >
-            Study
+            Projects
           </Link>
           {/* Кнопка резюме */}
           <a

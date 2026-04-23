@@ -1,0 +1,50 @@
+/* components/NotFound/NotFound.module.css */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.errorCode {
+  font-family: var(--font-jakarta);
+  font-size: 8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.title {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 450px;
+  margin-bottom: 2rem;
+}
+
+.timerBar {
+  width: 250px;
+  height: 4px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--text-main);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: var(--accent-yellow); /* Наш фірмовий колір */
+  width: 100%;
+  animation: shrink 5s linear forwards;
+}
+
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

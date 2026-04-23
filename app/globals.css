@@ -26,6 +26,10 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
 body {
   background-color: var(--bg-color);
@@ -104,7 +108,14 @@ h3 {
   font-weight: 800;
   margin-bottom: 3rem;
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
+
+  /* ВИПРАВЛЕННЯ: */
+  display: block; /* Робимо блоком */
+  width: fit-content; /* Ширина тільки по тексту (важливо для ::after) */
+  margin-left: auto; /* Центруємо зліва */
+  margin-right: auto; /* Центруємо справа */
+  text-align: center;
 }
 
 /* Ефект "маркера" під заголовком у стилі ескізу */
