@@ -131,3 +131,33 @@ h3 {
   opacity: 0.6;
   transform: skewX(-15deg);
 }
+
+/* 1. Стилізація для Chrome, Edge та Safari */
+::-webkit-scrollbar {
+  width: 12px; /* Ширина скролбару */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color); /* Колір доріжки (фон сайту) */
+  border-left: 2px solid var(--text-main); /* Додаємо лінію, щоб підкреслити стиль */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(
+    --text-main
+  ); /* Повзунок робимо основним темним кольором */
+  border: 2px solid var(--bg-color); /* Відступ навколо повзунка */
+  border-radius: 0px; /* Залишаємо гострі кути для ескізного стилю */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-yellow); /* При наведенні стає жовтим! */
+  cursor: grab;
+}
+
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-main) var(--bg-color);
+  }
+}

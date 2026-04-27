@@ -3,11 +3,21 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about" },
+    { name: "Skills", href: "/#skills" },
+    { name: "Experience", href: "/#experience" },
+    { name: "Projects", href: "/projects" },
+  ];
 
   // Блокування скролу при відкритому меню
   useEffect(() => {
@@ -38,7 +48,47 @@ const Header = () => {
 
         {/* Навігація */}
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navActive : ""}`}>
-          <Link
+          <div className={styles.mobileSocials}>
+            <Link
+              href="https://github.com/IrynaYermak"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              onClick={() => setIsMenuOpen(false)} // Закриваємо при переході
+            >
+              <svg width="32" height="32" className={styles.socialIcon}>
+                <use href="/icons.svg#icon-github"></use>
+              </svg>
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/iryna-yermak/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <svg width="32" height="32" className={styles.socialIcon}>
+                <use href="/icons.svg#icon-linkedin"></use>
+              </svg>
+            </Link>
+          </div>
+
+          {navLinks.map((link) => {
+            // Перевіряємо, чи посилання активне для стилізації
+            const isActive = pathname === link.href;
+
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`${styles.navLink} ${isActive ? styles.active : ""}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+          {/* <Link
             href="/"
             className={styles.navLink}
             onClick={() => setIsMenuOpen(false)}
@@ -72,7 +122,7 @@ const Header = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             Projects
-          </Link>
+          </Link> */}
           {/* Кнопка резюме */}
           <a
             className={styles.navLink}

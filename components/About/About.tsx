@@ -1,4 +1,5 @@
 import styles from "./About.module.css";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -10,14 +11,15 @@ export default function About() {
           {/* Права частина: Зображення або стилізований блок */}
           <div className={styles.imageSide}>
             <div className={styles.imageFrame}>
-              {/* <Image
-                  src="/images/about-photo.jpg" // Замініть на ваше реальне фото або ще один ескіз
-                  alt="Iryna Yermak"
-                  width={400}
-                  height={450}
-                  className={styles.aboutImage}
-                  style={{ width: "100%", height: "auto" }}
-                /> */}
+              <Image
+                src="/images/about.png"
+                alt="Iryna Yermak"
+                width={400}
+                height={450}
+                className={styles.aboutImage}
+                loading="eager"
+                style={{ width: "100%", height: "auto" }}
+              />
             </div>
           </div>
 

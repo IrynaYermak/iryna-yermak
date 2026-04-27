@@ -88,6 +88,10 @@
 }
 
 /* Соцмережі */
+.mobileSocials {
+  display: none;
+}
+
 .socials {
   display: flex;
   gap: 1rem;
@@ -102,6 +106,20 @@
 .socialIcon:hover {
   color: var(--primary-color);
   transform: translateY(-2px);
+}
+
+/* Активний стан посилання */
+.navLink.active {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Робимо лінію-маркер видимою постійно для активного лінка */
+.navLink.active::after {
+  width: 100%;
+  background-color: var(
+    --accent-yellow
+  ); /* Можна змінити на primary, якщо хочеш більше контрасту */
 }
 
 /* Мобільне меню */
@@ -133,6 +151,23 @@
     gap: 2.5rem;
     z-index: 999; /* Нижче ніж кнопка закриття */
     transition: all 0.3s ease-in-out;
+  }
+
+  .mobileSocials {
+    display: flex; /* Показуємо в бургері */
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    width: 50%; /* Щоб лінія не була на весь екран */
+    justify-content: center;
+    border-bottom: 2px dashed var(--text-main);
+  }
+
+  /* Робимо іконки в меню трохи більшими для зручності натискання пальцем */
+  .mobileSocials .socialIcon {
+    width: 32px;
+    height: 32px;
+    color: var(--text-main);
   }
 
   .navActive {

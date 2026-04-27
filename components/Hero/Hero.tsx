@@ -24,6 +24,7 @@ const Hero = () => {
           height={550}
           priority
           className={styles.sketchImage}
+          style={{ width: "100%", height: "auto" }}
         />
       </div>
     </section>

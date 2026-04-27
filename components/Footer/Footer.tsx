@@ -26,24 +26,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Колонка 2: Навігація */}
-          <div>
-            <h3 className={styles.title}>Navigation</h3>
-            <ul className={styles.linkList}>
-              <li>
-                <Link href="#skills" className={styles.link}>
-                  Skills
-                </Link>
-              </li>
-              <li>
-                <Link href="#experience" className={styles.link}>
-                  Experience
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Колонка 3: Контакти */}
+          {/* Колонка 2: Контакти */}
           <div>
             <h3 className={styles.title}>Contact</h3>
             <ul className={styles.linkList}>
