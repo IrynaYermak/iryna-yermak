@@ -29,6 +29,31 @@ export const metadata: Metadata = {
     icon: "/svg/favicon.svg",
     apple: "/svg/favicon.svg",
   },
+  openGraph: {
+    title: "Iryna Yermak | Junior Frontend Developer",
+    description:
+      "Frontend developer Iryna Yermak's portfolio. I create clean code and aesthetic interfaces.",
+    url: "https://iryna-yermak.vercel.app/",
+    siteName: "Iryna Yermak Portfolio",
+    images: [
+      {
+        url: "https://iryna-yermak.vercel.app/images/about.png", // ПРЯМЕ посилання на картинку
+        width: 1200,
+        height: 630,
+        alt: "Iryna Yermak Portfolio Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  // Специфічні теги для Twitter/Telegram (Telegram часто використовує їх теж)
+  twitter: {
+    card: "summary_large_image", // Це критично для відображення великого фото
+    title: "Iryna Yermak | Junior Frontend Developer",
+    description: "Frontend Developer portfolio",
+    images: ["https://iryna-yermak.vercel.app/images/about.png"],
+  },
 };
 
 export default function RootLayout({
