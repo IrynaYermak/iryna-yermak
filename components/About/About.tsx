@@ -2,6 +2,19 @@ import styles from "./About.module.css";
 import Image from "next/image";
 
 export default function About() {
+  const softSkills = [
+    "Strong communication",
+    "Team collaboration",
+    "Fast learning",
+    "User empathy",
+    "Problem solving",
+    "Time management",
+    "High adaptability",
+    "Attention detail",
+    "Proactive attitude",
+    "Reliable delivery",
+  ];
+
   return (
     <section id="about" className="section">
       <div className="container">
@@ -47,15 +60,11 @@ export default function About() {
 
             {/* Додаткова інформація */}
             <ul className={styles.infoList}>
-              <li className={styles.infoItem}>
-                Comfortable in dynamic environments
-              </li>
-
-              <li className={styles.infoItem}>
-                Not afraid of challenges and always ready to take initiative
-              </li>
-              <li className={styles.infoItem}>Lifelong Learner</li>
-              <li className={styles.infoItem}>Based in Europe</li>
+              {softSkills.map((skill, index) => (
+                <li className={styles.infoItem} key={index}>
+                  {skill}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
