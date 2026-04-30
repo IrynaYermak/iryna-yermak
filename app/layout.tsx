@@ -22,6 +22,7 @@ const firaCode = Fira_Code({
   variable: "--font-fira",
 });
 export const metadata: Metadata = {
+  metadataBase: new URL("https://iryna-yermak.vercel.app"),
   title: "Iryna Yermak | Junior Frontend Developer",
   description:
     "Frontend developer Iryna Yermak's portfolio. I create clean code and aesthetic interfaces.",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Iryna Yermak Portfolio",
     images: [
       {
-        url: "https://iryna-yermak.vercel.app/images/about.png", // ПРЯМЕ посилання на картинку
+        url: "https://iryna-yermak.vercel.app/images/hero-image.png",
         width: 1200,
         height: 630,
         alt: "Iryna Yermak Portfolio Preview",
@@ -49,10 +50,10 @@ export const metadata: Metadata = {
 
   // Специфічні теги для Twitter/Telegram (Telegram часто використовує їх теж)
   twitter: {
-    card: "summary_large_image", // Це критично для відображення великого фото
+    card: "summary_large_image",
     title: "Iryna Yermak | Junior Frontend Developer",
     description: "Frontend Developer portfolio",
-    images: ["https://iryna-yermak.vercel.app/images/about.png"],
+    images: ["https://iryna-yermak.vercel.app/images/hero-image.png"],
   },
 };
 
