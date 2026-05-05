@@ -13,6 +13,15 @@ const ProjectDetailPage = () => {
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const normalizedFeatures = Array.isArray((project as any)?.features)
+    ? ((project as any).features as string[])
+    : typeof (project as any)?.features === "string"
+    ? ((project as any).features as string)
+        .split(/[,\n]/)
+        .map((item) => item.trim())
+        .filter(Boolean)
+    : [];
+
   useEffect(() => {
     const fetchProject = async () => {
       try {
@@ -69,7 +78,7 @@ const ProjectDetailPage = () => {
         <section className={styles.section}>
           <h2>🎯 Key Features</h2>
           <ul className={styles.featuresList}>
-            {project.features.map((feature, index) => (
+            {normalizedFeatures.map((feature, index) => (
               <li key={index} className={styles.featureItem}>
                 {feature}
               </li>
