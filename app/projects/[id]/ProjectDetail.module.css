@@ -1,0 +1,126 @@
+.pageWrapper {
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.backBtnWrapper {
+  margin-bottom: 40px;
+}
+
+.header {
+  margin-bottom: 40px;
+  /* Додаємо графічний акцент як на головній */
+  border-bottom: 3px solid var(--text-main);
+  padding-bottom: 20px;
+}
+
+.category {
+  display: inline-block;
+  padding: 4px 16px;
+  background-color: var(--accent-yellow);
+  color: #000;
+  font-weight: 700;
+  border: 2px solid var(--text-main); /* Графічна рамка */
+  border-radius: 100px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900; /* Більш жирний для графічності */
+  line-height: 1.1;
+  color: var(--text-main);
+}
+
+.mainImageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Менший паддінг для мобілок */
+  background: #fdfdfd;
+  border: 3px solid var(--text-main);
+  border-radius: 24px;
+  margin-bottom: 40px;
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 500px; /* Максимальний розмір на десктопі */
+  position: relative;
+  line-height: 0; /* Прибирає зайві відступи знизу */
+}
+
+.projectImage {
+  width: 100% !important; /* Зображення займає всю ширину контейнера */
+  height: auto !important; /* Висота розраховується автоматично, щоб зберегти пропорції */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: block;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 60px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+/* TECH STACK: Робимо кожну технологію окремим елементом з відступами */
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Пробіли між тегами */
+  margin-bottom: 32px;
+}
+
+.techTag {
+  padding: 8px 16px;
+  background: var(--bg-color);
+  color: var(--text-main);
+  border: 2px solid var(--text-main); /* Графічний стиль */
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.challengeBlock,
+.solutionBlock {
+  padding: 32px;
+  border-radius: 24px;
+  border: 3px solid var(--text-main); /* Жирна рамка як на головній */
+  margin-bottom: 24px;
+}
+
+.challengeBlock {
+  background: #fff5f5;
+}
+.solutionBlock {
+  background: #f4fce3;
+}
+
+/* Мобільна версія */
+@media (max-width: 768px) {
+  .mainImageWrapper {
+    padding: 40px;
+    margin-bottom: 60px;
+    border-radius: 32px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+}
