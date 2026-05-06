@@ -7,20 +7,12 @@ import axios from "axios";
 import Project from "@/types/Project";
 import Button from "@/components/Button/Button";
 import styles from "./ProjectDetail.module.css";
+import Loader from "@/components/Loader/Loader";
 
 const ProjectDetailPage = () => {
   const { id } = useParams();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
-
-  const normalizedFeatures = Array.isArray((project as any)?.features)
-    ? ((project as any).features as string[])
-    : typeof (project as any)?.features === "string"
-    ? ((project as any).features as string)
-        .split(/[,\n]/)
-        .map((item) => item.trim())
-        .filter(Boolean)
-    : [];
 
   useEffect(() => {
     const fetchProject = async () => {
@@ -37,7 +29,7 @@ const ProjectDetailPage = () => {
     fetchProject();
   }, [id]);
 
-  if (loading) return <div className={styles.statusMessage}>Loading...</div>;
+  if (loading) return <Loader />;
   if (!project)
     return <div className={styles.statusMessage}>Project not found.</div>;
 
@@ -54,7 +46,6 @@ const ProjectDetailPage = () => {
         <h1 className={styles.title}>{project.title}</h1>
       </header>
 
-      {/* Контейнер зображення тепер має стабільну висоту для десктопа */}
       <div className={styles.mainImageWrapper}>
         <div className={styles.imageContainer}>
           <Image
@@ -76,9 +67,9 @@ const ProjectDetailPage = () => {
         </section>
 
         <section className={styles.section}>
-          <h2>🎯 Key Features</h2>
+          <h2> Key Features</h2>
           <ul className={styles.featuresList}>
-            {normalizedFeatures.map((feature, index) => (
+            {project.features.map((feature, index) => (
               <li key={index} className={styles.featureItem}>
                 {feature}
               </li>
@@ -88,24 +79,17 @@ const ProjectDetailPage = () => {
 
         <section className={styles.qaSection}>
           <div className={styles.challengeBlock}>
-            <h3>🚧 The Challenge</h3>
+            <h3>The Challenge</h3>
             <p>{project.challenges}</p>
           </div>
           <div className={styles.solutionBlock}>
-            <h3>💡 The Solution</h3>
+            <h3> The Solution</h3>
             <p>{project.solutions}</p>
           </div>
         </section>
 
         <aside>
-          <div
-            className={styles.infoCard}
-            style={{
-              border: "3px solid var(--text-main)",
-              borderRadius: "24px",
-              padding: "30px",
-            }}
-          >
+          <div className={styles.infoCard}>
             <h3>Tech Stack</h3>
             <div className={styles.techList}>
               {project.techStack.map((tech) => (

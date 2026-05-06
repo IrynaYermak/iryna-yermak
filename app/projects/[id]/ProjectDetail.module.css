@@ -108,6 +108,17 @@
   background: #f4fce3;
 }
 
+.infoCard {
+  border: 3px solid var(--text-main);
+  border-radius: 24px;
+  padding: 30px;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 /* Мобільна версія */
 @media (max-width: 768px) {
   .mainImageWrapper {
