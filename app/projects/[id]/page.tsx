@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import axios from "axios";
+import { notFound } from "next/navigation";
 import Project from "@/types/Project";
 import Button from "@/components/Button/Button";
 import styles from "./ProjectDetail.module.css";
@@ -30,8 +31,9 @@ const ProjectDetailPage = () => {
   }, [id]);
 
   if (loading) return <Loader />;
-  if (!project)
-    return <div className={styles.statusMessage}>Project not found.</div>;
+  if (!project) {
+    notFound();
+  }
 
   return (
     <article className={`${styles.pageWrapper} container`}>

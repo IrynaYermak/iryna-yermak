@@ -1,0 +1,6 @@
+{"sessionId":"2c326c","runId":"initial-load","hypothesisId":"H1","location":"app/projects/page.tsx:22","message":"fetchProjects called","data":{"activeCategory":"all"},"timestamp":1778169420895}
+{"sessionId":"2c326c","runId":"initial-load","hypothesisId":"H1","location":"app/projects/page.tsx:22","message":"fetchProjects called","data":{"activeCategory":"all"},"timestamp":1778169420899}
+{"sessionId":"2c326c","runId":"initial-load","hypothesisId":"H4","location":"app/projects/page.tsx:41","message":"projects API success","data":{"count":4},"timestamp":1778169420934}
+{"sessionId":"2c326c","runId":"initial-load","hypothesisId":"H2","location":"app/projects/page.tsx:73","message":"fetchProjects finished","data":{"loadingEnd":true},"timestamp":1778169420935}
+{"sessionId":"2c326c","runId":"initial-load","hypothesisId":"H4","location":"app/projects/page.tsx:41","message":"projects API success","data":{"count":4},"timestamp":1778169421032}
+{"sessionId":"2c326c","runId":"initial-load","hypothesisId":"H2","location":"app/projects/page.tsx:73","message":"fetchProjects finished","data":{"loadingEnd":true},"timestamp":1778169421032}

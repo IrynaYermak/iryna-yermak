@@ -5,17 +5,14 @@ import Project from "@/models/Project";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
+  // throw new Error("Manual Debug Error");
   try {
-    // Підключаємося до бази
     await connectToDatabase();
 
-    // Отримуємо всі проекти з бази
     const projects = await Project.find({});
-    console.log("Отримано проекти:", projects);
 
-    // Повертаємо їх у форматі JSON
     return NextResponse.json(projects);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { message: "Помилка при отриманні проектів" },
       { status: 500 }
