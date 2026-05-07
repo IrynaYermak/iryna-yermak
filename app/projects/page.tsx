@@ -9,7 +9,6 @@ import Project from "@/types/Project";
 import Loader from "@/components/Loader/Loader";
 
 const ProjectsPage = () => {
-  // throw new Error("Test Crash");
   const [projects, setProjects] = useState<Project[]>([]);
   const [activeCategory, setActiveCategory] = useState("all");
   const [error, setError] = useState<string | null>(null);
@@ -51,7 +50,7 @@ const ProjectsPage = () => {
       return projects;
     }
     return projects.filter((p) => p.category === activeCategory);
-  }, [activeCategory, projects]); // Обчислюється автоматично, коли змінюється категорія або список проектів
+  }, [activeCategory, projects]);
 
   const categories = [
     { id: "all", name: "All" },
