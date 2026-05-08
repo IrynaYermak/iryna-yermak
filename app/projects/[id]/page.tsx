@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useEffect, useState, useCallback } from "react";
+import { useParams, notFound } from "next/navigation";
 import Image from "next/image";
 import axios from "axios";
-import { notFound } from "next/navigation";
 import Project from "@/types/Project";
 import Button from "@/components/Button/Button";
 import styles from "./ProjectDetail.module.css";
@@ -15,44 +14,57 @@ const ProjectDetailPage = () => {
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchProject = async () => {
-      try {
-        const res = await axios.get<Project[]>("/api/projects");
-        const found = res.data.find((p) => p._id === id);
-        setProject(found || null);
-      } catch (error) {
-        console.error("Error:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProject();
+  const fetchProject = useCallback(async () => {
+    try {
+      setLoading(true);
+      const res = await axios.get<Project[]>("/api/projects");
+      const found = res.data.find((p) => p._id === id);
+      setProject(found || null);
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
   }, [id]);
 
+  useEffect(() => {
+    fetchProject();
+  }, [fetchProject]);
+
   if (loading) return <Loader />;
-  if (!project) {
-    notFound();
-  }
+  if (!project) return notFound();
+
+  const {
+    title,
+    category,
+    fullDescription,
+    imageUrl,
+    features,
+    techStack,
+    liveUrl,
+    githubUrl,
+    challenges,
+    solutions,
+  } = project;
 
   return (
-    <article className={`${styles.pageWrapper} container`}>
-      <div className={styles.backBtnWrapper}>
+    <article className="container">
+      <div className={styles.topNavigation}>
         <Button href="/projects" variant="outline">
           ← Back to Projects
         </Button>
       </div>
 
-      <header className={styles.header}>
-        <span className={styles.category}>{project.category}</span>
-        <h1 className={styles.title}>{project.title}</h1>
-      </header>
+      <div className={styles.header}>
+        <span className={styles.categoryBadge}>{category}</span>
+        <h1 className="sectionTitle">{title}</h1>
+      </div>
 
       <div className={styles.mainImageWrapper}>
         <div className={styles.imageContainer}>
           <Image
-            src={project.imageUrl || "/projects/placeholder.png"}
-            alt={project.title}
+            src={imageUrl || "/projects/placeholder.png"}
+            alt={title}
             width={500}
             height={500}
             priority
@@ -62,55 +74,51 @@ const ProjectDetailPage = () => {
         </div>
       </div>
 
-      <div className={styles.layout}>
-        <section className={styles.section}>
-          <h2>About Project</h2>
-          <p className={styles.description}>{project.fullDescription}</p>
-        </section>
+      <section className={styles.aboutSection}>
+        <h2>About Project</h2>
+        <p className={styles.descriptionText}>{fullDescription}</p>
+      </section>
 
-        <section className={styles.section}>
-          <h2> Key Features</h2>
-          <ul className={styles.featuresList}>
-            {project.features.map((feature, index) => (
-              <li key={index} className={styles.featureItem}>
-                {feature}
-              </li>
+      <div className={styles.gridContainer}>
+        <section className={`${styles.card} ${styles.featuresCard}`}>
+          <h3>Key Features</h3>
+          <ul className={styles.featureList}>
+            {features.map((f, i) => (
+              <li key={i}>{f}</li>
             ))}
           </ul>
         </section>
 
-        <section className={styles.qaSection}>
-          <div className={styles.challengeBlock}>
-            <h3>The Challenge</h3>
-            <p>{project.challenges}</p>
+        <aside className={`${styles.card} ${styles.techCard}`}>
+          <h3>Stack & Links</h3>
+          <div className={styles.tags}>
+            {techStack.map((t) => (
+              <span key={t} className={styles.techTag}>
+                {t}
+              </span>
+            ))}
           </div>
-          <div className={styles.solutionBlock}>
-            <h3> The Solution</h3>
-            <p>{project.solutions}</p>
-          </div>
-        </section>
-
-        <aside>
-          <div className={styles.infoCard}>
-            <h3>Tech Stack</h3>
-            <div className={styles.techList}>
-              {project.techStack.map((tech) => (
-                <span key={tech} className={styles.techTag}>
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className={styles.actions}>
-              <Button href={project.liveUrl} variant="yellow">
-                View Live Demo
-              </Button>
-              <Button href={project.githubUrl} variant="outline">
-                Browse Source Code
-              </Button>
-            </div>
+          <div className={styles.ctaGroup}>
+            <Button href={liveUrl} variant="yellow">
+              Live Demo
+            </Button>
+            <Button href={githubUrl} variant="outline">
+              Source Code
+            </Button>
           </div>
         </aside>
+
+        <section className={`${styles.card} ${styles.qaCard}`}>
+          <div className={styles.qaItem}>
+            <h4>The Challenge</h4>
+            <p>{challenges}</p>
+          </div>
+          <hr className={styles.divider} />
+          <div className={styles.qaItem}>
+            <h4>The Solution</h4>
+            <p>{solutions}</p>
+          </div>
+        </section>
       </div>
     </article>
   );

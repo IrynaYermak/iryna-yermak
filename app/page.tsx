@@ -8,7 +8,6 @@ import WorkExperience from "@/components/WorkExperience/WorkExperience";
 
 export default function Home() {
   return (
-    // <div className={styles.page}>
     <>
       <Hero />
       <About />
@@ -16,6 +15,5 @@ export default function Home() {
       <Education />
       <WorkExperience />
     </>
-    // </div>
   );
 }

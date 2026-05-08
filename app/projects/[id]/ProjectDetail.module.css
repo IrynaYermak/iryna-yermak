@@ -1,37 +1,23 @@
-.pageWrapper {
-  padding-top: 100px;
-  padding-bottom: 80px;
-}
-
-.backBtnWrapper {
-  margin-bottom: 40px;
+.topNavigation {
+  padding: 40px 0 20px;
 }
 
 .header {
+  text-align: center;
   margin-bottom: 40px;
-  /* Додаємо графічний акцент як на головній */
-  border-bottom: 3px solid var(--text-main);
-  padding-bottom: 20px;
 }
 
-.category {
+.categoryBadge {
   display: inline-block;
-  padding: 4px 16px;
+  padding: 10px 25px;
   background-color: var(--accent-yellow);
   color: #000;
   font-weight: 700;
-  border: 2px solid var(--text-main); /* Графічна рамка */
-  border-radius: 100px;
+  border: 2px solid var(--text-main);
+  box-shadow: 4px 4px 0px var(--text-main);
   font-size: 0.85rem;
   text-transform: uppercase;
   margin-bottom: 16px;
-}
-
-.title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 900; /* Більш жирний для графічності */
-  line-height: 1.1;
-  color: var(--text-main);
 }
 
 .mainImageWrapper {
@@ -39,99 +25,182 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Менший паддінг для мобілок */
-  background: #fdfdfd;
+  padding: 16px;
+  background: var(--card-bg);
   border: 3px solid var(--text-main);
-  border-radius: 24px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  box-shadow: 6px 6px 0px var(--text-main);
 }
 
 .imageContainer {
   width: 100%;
-  max-width: 500px; /* Максимальний розмір на десктопі */
+  max-width: 500px;
   position: relative;
-  line-height: 0; /* Прибирає зайві відступи знизу */
+  line-height: 0;
 }
 
 .projectImage {
-  width: 100% !important; /* Зображення займає всю ширину контейнера */
-  height: auto !important; /* Висота розраховується автоматично, щоб зберегти пропорції */
+  width: 100% !important;
+  height: auto !important;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.05);
-  display: block;
 }
 
-.layout {
+.aboutSection {
+  margin: 0 auto 60px;
+  text-align: center;
+  padding: 16px;
+  border: 3px solid var(--text-main);
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px var(--accent-yellow);
+}
+
+.aboutSection h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 20px;
+}
+
+.descriptionText {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+.gridContainer {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 60px;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-areas:
+    "features tech"
+    "qa qa";
+  gap: 30px;
+  margin-bottom: 100px;
 }
 
-.section h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 24px;
+.card {
+  background: var(--card-bg);
+  border: 3px solid var(--text-main);
+  padding: 35px;
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px var(--accent-yellow);
+}
+
+.card h3 {
+  font-size: 1.4rem;
   text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--text-main);
+  padding-bottom: 10px;
 }
 
-/* TECH STACK: Робимо кожну технологію окремим елементом з відступами */
-.techList {
+.featuresCard {
+  grid-area: features;
+}
+.techCard {
+  grid-area: tech;
+}
+.qaCard {
+  grid-area: qa;
+}
+
+.featureList {
+  list-style: none;
+}
+
+.featureList li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.featureList li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
+.tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px; /* Пробіли між тегами */
-  margin-bottom: 32px;
+  gap: 8px;
+  margin-bottom: 25px;
 }
 
 .techTag {
-  padding: 8px 16px;
   background: var(--bg-color);
-  color: var(--text-main);
-  border: 2px solid var(--text-main); /* Графічний стиль */
-  border-radius: 12px;
-  font-size: 0.9rem;
+  border: 1px solid var(--text-main);
+  padding: 6px 12px;
+  font-size: 0.85rem;
   font-weight: 700;
 }
 
-.challengeBlock,
-.solutionBlock {
-  padding: 32px;
-  border-radius: 24px;
-  border: 3px solid var(--text-main); /* Жирна рамка як на головній */
-  margin-bottom: 24px;
-}
-
-.challengeBlock {
-  background: #fff5f5;
-}
-.solutionBlock {
-  background: #f4fce3;
-}
-
-.infoCard {
-  border: 3px solid var(--text-main);
-  border-radius: 24px;
-  padding: 30px;
-}
-.actions {
+.ctaGroup {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
-/* Мобільна версія */
-@media (max-width: 768px) {
-  .mainImageWrapper {
-    padding: 40px;
-    margin-bottom: 60px;
-    border-radius: 32px;
-  }
+.qaItem h4 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
 
-  .layout {
+.divider {
+  margin: 25px 0;
+  border: 0;
+  border-top: 2px dashed var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .gridContainer {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "features"
+      "tech"
+      "qa";
+    gap: 20px;
   }
 
-  .title {
-    font-size: 2.2rem;
+  .mainImageWrapper {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topNavigation {
+    padding: 20px 0;
+  }
+
+  .mainImageWrapper {
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+  }
+
+  .descriptionText {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .aboutSection {
+    margin-bottom: 40px;
+  }
+
+  .card {
+    padding: 20px;
+    box-shadow: 4px 4px 0px var(--accent-yellow);
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header :global(.sectionTitle) {
+    font-size: 1.8rem; /* Щоб довгі назви не ламали екран */
   }
 }

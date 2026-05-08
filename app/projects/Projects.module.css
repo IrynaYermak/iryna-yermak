@@ -11,7 +11,7 @@
   text-transform: uppercase;
 }
 
-/* Стилі для Табів */
+/* Tabs */
 .tabs {
   display: flex;
   justify-content: center;
@@ -25,7 +25,7 @@
   border: 3px solid var(--text-main);
   background: transparent;
   font-family: inherit;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
@@ -42,7 +42,7 @@
   transform: translate(-2px, -2px);
 }
 
-/* Сітка проектів */
+/* Grid projects */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -51,8 +51,8 @@
 
 .card {
   background: var(--bg-card, #ffffff);
-  border-radius: 16px; /* Дуже плавні кути */
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Ледь помітна рамка */
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: all 0.4s ease;
   display: flex;
@@ -66,9 +66,8 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Контейнер для фото з відступами */
 .imageWrapper {
-  padding: 1.5rem 1.5rem 0 1.5rem; /* Відступи зверху та з боків */
+  padding: 1.5rem 1.5rem 0 1.5rem;
   width: 100%;
   height: 240px;
   position: relative;
@@ -76,7 +75,7 @@
 
 .projectImage {
   object-fit: cover;
-  border-radius: 16px; /* Закруглюємо саме фото */
+  border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -98,9 +97,8 @@
 .description {
   font-size: 1rem;
   line-height: 1.6;
-  color: #666; /* Більш м'який колір тексту */
+  color: #666;
   margin-bottom: 1.5rem;
-  /* Обмежуємо опис, наприклад, 3-ма рядками, щоб картки не були занадто довгими */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -114,13 +112,11 @@
   margin-bottom: 2rem;
 }
 
-/* МАГІЯ ТУТ: Контейнер для кнопки */
 .cardFooter {
-  margin-top: auto; /* Штовхає кнопку в самий низ .cardContent */
+  margin-top: auto;
   width: 100%;
 }
 
-/* Розтягуємо кнопку на всю ширину для стабільності */
 .cardFooter > a,
 .cardFooter > button {
   width: 100%;

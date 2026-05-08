@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Button from "@/components/Button/Button";
 import styles from "./Error.module.css";
 
-// Окремий інтерфейс для пропсів (можна винести в types/error.ts, якщо треба)
 interface ErrorPageProps {
   error: Error & { digest?: string };
   reset: () => void;
