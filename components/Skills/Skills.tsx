@@ -55,7 +55,6 @@ const Skills = () => {
             </div>
           ))}
 
-          {/* Картка з правами водія (як цікава деталь) */}
           <div className={`${styles.skillCard} ${styles.bonusCard}`}>
             <h3 className={styles.categoryTitle}>Other</h3>
             <div className={styles.tagContainer}>

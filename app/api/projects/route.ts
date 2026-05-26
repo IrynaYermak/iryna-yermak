@@ -13,7 +13,7 @@ export async function GET() {
     return NextResponse.json(projects);
   } catch {
     return NextResponse.json(
-      { message: "Помилка при отриманні проектів" },
+      { message: "Error receiving projects" },
       { status: 500 }
     );
   }

@@ -1,9 +1,8 @@
-/* components/Footer/Footer.module.css */
 .footer {
   flex-shrink: 0;
   background-color: var(--bg-color);
   padding: 4rem 0 2rem 0;
-  border-top: 3px solid var(--text-main); /* Товста лінія, як в ескізі */
+  border-top: 3px solid var(--text-main);
   margin-top: 4rem;
 }
 
@@ -14,7 +13,6 @@
   margin-bottom: 3rem;
 }
 
-/* Лого та статус */
 .brandSide {
   display: flex;
   flex-direction: column;
@@ -31,10 +29,9 @@
   font-size: 0.85rem;
   font-weight: 600;
   border: 1px solid var(--text-main);
-  transform: rotate(-2deg); /* Ефект наклейки */
+  transform: rotate(-2deg);
 }
 
-/* Контакти та Навігація */
 .title {
   font-family: var(--font-jakarta);
   font-size: 1.2rem;
@@ -71,7 +68,6 @@
   transform: translateY(-2px);
 }
 
-/* Нижня панель */
 .bottomBar {
   border-top: 1px solid var(--text-muted);
   padding-top: 2rem;
@@ -87,10 +83,9 @@
   gap: 1.5rem;
 }
 
-/* Медіа-запити (Responsive) */
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: 1fr; /* Всі колонки в одну лінію */
+    grid-template-columns: 1fr;
     gap: 2.5rem;
     text-align: center;
   }
@@ -108,7 +103,7 @@
 }
 
 .easterEgg {
-  font-family: var(--font-fira), monospace; /* Використовуємо моноширинний шрифт */
+  font-family: var(--font-fira), monospace;
   font-size: 0.75rem;
   color: var(--text-muted);
   cursor: default;
@@ -122,7 +117,7 @@
 .easterEgg:hover {
   opacity: 1;
   color: var(--primary-color);
-  transform: rotate(-3deg) scale(1.1); /* "Оживає" при наведенні */
+  transform: rotate(-3deg) scale(1.1);
 }
 
 .coffeeIcon {
@@ -130,7 +125,7 @@
 }
 
 .easterEgg:hover .coffeeIcon {
-  transform: rotate(15deg) translateY(-2px); /* Чашка "парує" */
+  transform: rotate(15deg) translateY(-2px);
 }
 
 .highlightCode {

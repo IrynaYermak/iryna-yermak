@@ -1,4 +1,3 @@
-/* components/Header/Header.module.css */
 .header {
   position: fixed;
   top: 0;
@@ -18,39 +17,21 @@
   align-items: center;
 }
 
-/* Логотип */
-/* .logo {
-  font-family: var(--font-jakarta);
-  font-size: 1.5rem;
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--text-main);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.logo span {
-  color: var(--primary-color);
-} */
-
 .logo {
   display: flex;
   align-items: center;
-  /* Прибираємо старі шрифтові налаштування, якщо вони заважають */
   text-decoration: none;
 }
 
 .logoImage {
-  object-fit: contain; /* Щоб логотип не деформувався */
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 
 .logoImage:hover {
-  transform: scale(1.05); /* Легкий ефект при наведенні */
+  transform: scale(1.05);
 }
 
-/* Навігація */
 .nav {
   display: flex;
   gap: 2rem;
@@ -70,7 +51,6 @@
   color: var(--primary-color);
 }
 
-/* Ефект підкреслення-маркера */
 .navLink::after {
   content: "";
   position: absolute;
@@ -87,7 +67,6 @@
   width: 100%;
 }
 
-/* Соцмережі */
 .mobileSocials {
   display: none;
 }
@@ -108,21 +87,17 @@
   transform: translateY(-2px);
 }
 
-/* Активний стан посилання */
 .navLink.active {
   color: var(--primary-color);
   font-weight: 700;
 }
 
-/* Робимо лінію-маркер видимою постійно для активного лінка */
 .navLink.active::after {
   width: 100%;
-  background-color: var(
-    --accent-yellow
-  ); /* Можна змінити на primary, якщо хочеш більше контрасту */
+  background-color: var(--accent-yellow);
 }
 
-/* Мобільне меню */
+/* Mobile manu */
 .burger {
   display: none;
   background: none;
@@ -138,32 +113,30 @@
   }
 
   .nav {
-    position: fixed; /* Змінюємо на fixed */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh; /* На весь екран */
     background-color: var(--bg-color);
-    display: none; /* Сховано за замовчуванням */
+    display: none;
     flex-direction: column;
-    justify-content: center; /* Центруємо вертикально */
-    align-items: center; /* Центруємо горизонтально */
+    justify-content: center;
+    align-items: center;
     gap: 2.5rem;
-    z-index: 999; /* Нижче ніж кнопка закриття */
+    z-index: 999;
     transition: all 0.3s ease-in-out;
   }
 
   .mobileSocials {
-    display: flex; /* Показуємо в бургері */
+    display: flex;
     gap: 2.5rem;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    width: 50%; /* Щоб лінія не була на весь екран */
+    width: 50%;
     justify-content: center;
     border-bottom: 2px dashed var(--text-main);
   }
 
-  /* Робимо іконки в меню трохи більшими для зручності натискання пальцем */
   .mobileSocials .socialIcon {
     width: 32px;
     height: 32px;
@@ -191,8 +164,6 @@
   }
 }
 
-/* /----- */
-
 .themeToggle {
   background: none;
   border-radius: 50%;
@@ -210,7 +181,6 @@
   background-color: var(--accent-yellow);
 }
 
-/* На мобільних пристроях ховаємо або адаптуємо */
 @media (max-width: 768px) {
   .actions {
     gap: 0.8rem;

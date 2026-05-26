@@ -1,9 +1,6 @@
-/* components/About/About.module.css */
-
 .aboutGrid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr; /* Текст трохи ширший за картинку/блок */
-  gap: 4rem;
+  grid-template-columns: 1.2fr 1fr;
   align-items: center;
 }
 
@@ -26,7 +23,6 @@
   padding: 0 4px;
 }
 
-/* Блок з акцентом (наприклад, для вашого фото або цікавого факту) */
 .imageSide {
   position: relative;
 }
@@ -36,7 +32,7 @@
   border-radius: 8px;
   padding: 10px;
   background-color: var(--card-bg);
-  box-shadow: 8px 8px 0px var(--primary-color); /* "Ескізна" тінь */
+  box-shadow: 8px 8px 0px var(--primary-color);
   transition: transform 0.3s ease;
 }
 
@@ -45,7 +41,6 @@
   box-shadow: 12px 12px 0px var(--accent-yellow);
 }
 
-/* Список ключових фактів або soft-skills */
 .infoList {
   list-style: none;
   margin-top: 1rem;
@@ -68,7 +63,6 @@
   font-weight: bold;
 }
 
-/* Адаптивність */
 @media (max-width: 768px) {
   .aboutGrid {
     grid-template-columns: 1fr;
@@ -78,6 +72,6 @@
   .imageSide {
     max-width: 400px;
     margin: 0 auto;
-    order: -1; /* Картинка зверху на мобільних */
+    order: -1;
   }
 }

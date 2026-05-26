@@ -7,7 +7,6 @@ const Education = () => {
         <h2 className="sectionTitle">Education & Interests</h2>
 
         <div className={styles.grid}>
-          {/* Ліва колонка: Освіта */}
           <div className={styles.timeline}>
             <div className={styles.eduItem}>
               <span className={styles.date}>Mar 2025 - Apr 2026</span>
@@ -31,7 +30,6 @@ const Education = () => {
             </div>
           </div>
 
-          {/* Права колонка: Хобі */}
           <div className={styles.hobbiesSide}>
             <div className={styles.hobbyCard}>
               <h3 className={styles.hobbyTitle}> Baking</h3>

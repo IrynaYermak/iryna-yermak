@@ -6,9 +6,6 @@ if (!MONGODB_URI) {
   throw new Error("Check the .env file, MONGODB_URI is not defined");
 }
 
-/** * Глобальна змінна потрібна, щоб зберігати з'єднання
- * між перезавантаженнями сервера під час розробки.
- */
 let cached = (global as any).mongoose;
 
 if (!cached) {
@@ -16,12 +13,10 @@ if (!cached) {
 }
 
 async function connectToDatabase() {
-  // Якщо з'єднання вже є, використовуємо його
   if (cached.connection) {
     return cached.connection;
   }
 
-  // Якщо з'єднання ще немає, створюємо його
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,

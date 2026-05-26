@@ -10,7 +10,7 @@
 }
 
 [data-theme="dark"] {
-  /* Темна тема */
+  /*Dark theme */
   --primary-color: #8a7bff;
   --primary-hover: #a59aff;
   --accent-yellow: #fdfd96;

@@ -19,8 +19,6 @@ const ProjectSchema = new Schema(
   }
 );
 
-// const Project = models.Project || model("Project", ProjectSchema);
-
 if (models.Project) {
   delete models.Project;
 }

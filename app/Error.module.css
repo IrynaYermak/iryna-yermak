@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   padding: 40px 0;
-  /* Розраховуємо висоту так, щоб не було зайвого скролу, бо main вже має padding */
   min-height: 60vh;
 }
 
@@ -32,8 +31,6 @@
   justify-content: center;
 }
 
-/* Desktop-first Media Queries */
-
 @media (max-width: 768px) {
   .contentCard {
     padding: 30px 20px;
@@ -41,7 +38,7 @@
   }
 
   .actions {
-    flex-direction: column; /* Кнопки стають одна під одною */
+    flex-direction: column;
     width: 100%;
     max-width: 250px;
     margin: 0 auto;

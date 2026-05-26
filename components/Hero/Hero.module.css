@@ -3,8 +3,6 @@
   align-items: center;
   justify-content: space-between;
   min-height: 85vh;
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */
   padding: 2rem;
 }
 
@@ -60,7 +58,7 @@
 .ctaButton:hover {
   background-color: var(--primary-hover);
   transform: translate(-3px, -3px);
-  box-shadow: 5px 5px 0px var(--accent-yellow); /* Наш фірмовий акцент */
+  box-shadow: 5px 5px 0px var(--accent-yellow);
   color: white;
 }
 
@@ -82,10 +80,9 @@
 }
 
 [data-theme="dark"] .sketchImage {
-  filter: invert(0.9) hue-rotate(180deg); /* Це зробить чорні лінії білими, зберігаючи фіолетовий */
+  filter: invert(0.9) hue-rotate(180deg);
 }
 
-/* Адаптивність */
 @media (max-width: 768px) {
   .heroSection {
     flex-direction: column;

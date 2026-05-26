@@ -1,4 +1,3 @@
-// components/WorkExperience/WorkExperience.tsx
 import styles from "./WorkExperience.module.css";
 
 const experienceData = [
@@ -7,12 +6,12 @@ const experienceData = [
     period: "Mar 2025 - Present",
     role: "Career break to study Software Development",
     company: "Focus: Full-stack Development",
-    isStudy: true, // Спеціальний флаг для стилізації
+    isStudy: true,
     description: [],
   },
   {
     id: 2,
-    period: "Dec 2025 - Dec 2026", // Припустив рік закінчення для логіки
+    period: "Dec 2025 - Dec 2026",
     role: "Fixed Term Auxiliary Postal Operative",
     company: "AnPost, Portlaoise",
     isStudy: false,

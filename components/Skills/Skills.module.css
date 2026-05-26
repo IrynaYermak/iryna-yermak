@@ -50,9 +50,8 @@
   color: white;
 }
 
-/* Окрема картка для прав водія або бонусів */
 .bonusCard {
-  border-style: dashed; /* Пунктирна рамка як для "додатку" */
+  border-style: dashed;
   background-color: transparent;
 }
 

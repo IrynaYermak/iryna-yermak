@@ -11,7 +11,6 @@ interface ErrorPageProps {
 
 export default function Error({ error, reset }: ErrorPageProps) {
   useEffect(() => {
-    // Логуємо тільки в розробці, щоб не "світити" зайвим у продакшні
     if (process.env.NODE_ENV === "development") {
       console.error("Debug Error Info:", error);
     }

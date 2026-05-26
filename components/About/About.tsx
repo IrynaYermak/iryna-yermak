@@ -21,7 +21,6 @@ export default function About() {
         <h2 className="sectionTitle">About Me</h2>
 
         <div className={styles.aboutGrid}>
-          {/* Права частина: Зображення або стилізований блок */}
           <div className={styles.imageSide}>
             <div className={styles.imageFrame}>
               <Image
@@ -36,7 +35,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Ліва частина: Текст */}
           <div className={styles.textSide}>
             <div className={styles.textContent}>
               <p>
@@ -58,7 +56,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Додаткова інформація */}
             <ul className={styles.infoList}>
               {softSkills.map((skill, index) => (
                 <li className={styles.infoItem} key={index}>

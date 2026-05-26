@@ -9,7 +9,6 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.grid}>
-          {/* Колонка 1: Лого та статус */}
           <div className={styles.brandSide}>
             <Link href="/" className={styles.logo}>
               <Image
@@ -25,8 +24,6 @@ const Footer = () => {
               Creating modern interfaces with a love for detail and clean code.
             </p>
           </div>
-
-          {/* Колонка 2: Контакти */}
           <div>
             <h3 className={styles.title}>Contact</h3>
             <ul className={styles.linkList}>
@@ -47,10 +44,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Нижня панель */}
         <div className={styles.bottomBar}>
           <p>© {currentYear} Iryna Yermak. Built with Next.js & Passion.</p>
-          {/* Наша пасхалка */}
+
           <div className={styles.easterEgg} title="Yes, I really like coffee!">
             <span>Done with</span>
             <span className={styles.coffeeIcon}>☕</span>
@@ -59,7 +55,6 @@ const Footer = () => {
           </div>
 
           <div className={styles.socials}>
-            {/* Ті самі іконки, що в хедері */}
             <Link
               href="https://github.com/IrynaYermak"
               target="_blank"

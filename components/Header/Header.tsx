@@ -19,7 +19,6 @@ const Header = () => {
     { name: "Projects", href: "/projects" },
   ];
 
-  // Блокування скролу при відкритому меню
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -29,7 +28,6 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  // const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className={styles.header}>
@@ -39,14 +37,14 @@ const Header = () => {
           <Image
             src="/svg/my-logo.svg"
             alt="Iryna Yermak Logo"
-            width={150} // Підберіть потрібну ширину
-            height={50} // Підберіть потрібну висоту
-            priority // Логотип — це важливий елемент, завантажуємо його першим
+            width={150}
+            height={50}
+            priority
             className={styles.logoImage}
           />
         </Link>
 
-        {/* Навігація */}
+        {/* nav */}
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navActive : ""}`}>
           <div className={styles.mobileSocials}>
             <Link
@@ -54,7 +52,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              onClick={() => setIsMenuOpen(false)} // Закриваємо при переході
+              onClick={() => setIsMenuOpen(false)}
             >
               <svg width="32" height="32" className={styles.socialIcon}>
                 <use href="/icons.svg#icon-github"></use>
@@ -74,7 +72,6 @@ const Header = () => {
           </div>
 
           {navLinks.map((link) => {
-            // Перевіряємо, чи посилання активне для стилізації
             const isActive = pathname === link.href;
 
             return (
@@ -88,42 +85,8 @@ const Header = () => {
               </Link>
             );
           })}
-          {/* <Link
-            href="/"
-            className={styles.navLink}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="#about"
-            className={styles.navLink}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About
-          </Link>
-          <Link
-            href="#skills"
-            className={styles.navLink}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Skills
-          </Link>
-          <Link
-            href="#experience"
-            className={styles.navLink}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Experience
-          </Link>
-          <Link
-            href="/projects"
-            className={styles.navLink}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Projects
-          </Link> */}
-          {/* Кнопка резюме */}
+
+          {/*CV */}
           <a
             className={styles.navLink}
             href="/IRYNA_YERMAK_FRONTEND_DEVELOPER_CV.pdf"
@@ -133,7 +96,7 @@ const Header = () => {
           </a>
         </nav>
 
-        {/* Соцмережі */}
+        {/* SOCIAL */}
         <div className={styles.socials}>
           <Link
             href="https://github.com/IrynaYermak"
@@ -159,7 +122,6 @@ const Header = () => {
           <ThemeToggle />
         </div>
 
-        {/* Кнопка гамбургер (мобільна) */}
         <button
           type="button"
           className={styles.burger}
@@ -175,9 +137,9 @@ const Header = () => {
             strokeWidth="2"
           >
             {isMenuOpen ? (
-              <path d="M6 6L24 24M6 24L24 6" /> // Хрестик
+              <path d="M6 6L24 24M6 24L24 6" />
             ) : (
-              <path d="M4 7H26M4 15H26M4 23H26" /> // Гамбургер
+              <path d="M4 7H26M4 15H26M4 23H26" />
             )}
           </svg>
         </button>

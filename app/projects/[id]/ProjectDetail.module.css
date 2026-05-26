@@ -201,6 +201,6 @@
 
 @media (max-width: 480px) {
   .header :global(.sectionTitle) {
-    font-size: 1.8rem; /* Щоб довгі назви не ламали екран */
+    font-size: 1.8rem;
   }
 }

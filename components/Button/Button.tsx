@@ -23,7 +23,6 @@ const Button = ({
   const combinedClassName = `${styles.btn} ${styles[variant]} ${className}`;
 
   if (href) {
-    // Якщо це зовнішнє посилання
     if (href.startsWith("http") || href.endsWith(".pdf")) {
       return (
         <a
@@ -37,7 +36,7 @@ const Button = ({
         </a>
       );
     }
-    // Якщо це внутрішній лінк Next.js
+
     return (
       <Link href={href} className={combinedClassName}>
         {children}

@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
   },
 
-  // Специфічні теги для Twitter/Telegram (Telegram часто використовує їх теж)
+  // Twitter/Telegram Card metadata
   twitter: {
     card: "summary_large_image",
     title: "Iryna Yermak | Junior Frontend Developer",
